@@ -1,0 +1,24 @@
+@import "https://use.fontawesome.com/releases/v5.5.0/css/all.css";
+.heading{
+    position: relative;
+    top: 15px;
+    font-weight: bold;
+}
+.gap{
+    padding: 10px;
+}
+.card-header{
+
+}
+.text-red{
+    color: #ff2500;
+}
+.newExam{
+    margin-bottom: 29px;
+}
+.th,table{
+    text-align: center;
+}
+iframe{
+    width: 100%;
+}

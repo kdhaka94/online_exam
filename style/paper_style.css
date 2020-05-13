@@ -1,0 +1,15 @@
+@import "https://use.fontawesome.com/releases/v5.5.0/css/all.css";
+
+
+.heading{
+    position: relative;
+    top: 15px;
+    font-weight: bold;
+}
+.size-40{
+    width: 40%;
+}
+
+.gap{
+    padding: 10px;
+}

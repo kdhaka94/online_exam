@@ -1,0 +1,50 @@
+@import "https://use.fontawesome.com/releases/v5.5.0/css/all.css";
+body{
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+    /*background: url(bg.jpg) no-repeat;*/
+    background: #2c3e50;
+    background-size: cover;
+}
+.header{
+
+}
+.heading{
+    position: relative;
+    top: 15px;
+    font-weight: bold;
+}
+.btns{
+    position: fixed;
+    top: 0;
+    right: 2px;
+    color: #ffffff;
+}
+.gap{
+    padding :10px;
+}
+.gap-2{
+    padding :20px;
+}
+.card-container{
+    width: 500px;
+}
+.card-container-signup{
+    width: 500px;
+}
+.gap-200{
+    padding-top: 200px;
+}
+.gapH-20{
+    padding-right: 20px;
+}
+.margin-auto{
+    background-size: 100%;
+    width: 40%;
+    height: 20%;
+    margin: 0 auto;
+}
+.top-10{
+    margin-top: 200px;
+}

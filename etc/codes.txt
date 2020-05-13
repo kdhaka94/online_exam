@@ -1,0 +1,15 @@
+code = 0 = Authentication Failed!
+code = 1 = SignUp Failed
+code = 2 = SignUp Successful
+code = 3 = Account Not Blocked
+code = 4 = Account Blocked
+code = 5 = Account Not Approved
+code = 6 = Account Approved
+code = 7 = Attendance Marked
+code = 7 = Attendance Not Marked
+code = 8 = Was Present
+code = 9 = Was Absent
+dir = 0 = File in home directory
+dir = 1,2,3,4.... = File in one of the child directory
+code = 10 = Question Added Successfully
+code = 11 = Failed to Add Question

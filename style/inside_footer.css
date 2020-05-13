@@ -1,0 +1,35 @@
+@import "https://use.fontawesome.com/releases/v5.5.0/css/all.css";
+
+.footer-left{
+    color: black;
+    position: fixed;
+    padding: 0 0 5px 5px;
+    width: 100%;
+    bottom: 0;
+    left: 0;
+}
+.footer-right{
+    color: black;
+    position: fixed;
+    padding: 0 5px 5px 0;
+    bottom: 0;
+    right: 0;
+}
+
+/*ICONS*/
+.fa-facebook-f, .fa-instagram, .fa-linkedin-in{
+    color: #000000;
+    padding-right: 5px;
+}
+
+.fa-linkedin-in{
+    padding-right: 0;
+}
+.footer1{
+    font-family: Roboto , sans-serif;
+    bottom: 5px;
+}
+.no-bootstrap > a{
+    background-color: #000000;
+}
+
