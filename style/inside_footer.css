@@ -28,6 +28,7 @@
 .footer1{
     font-family: Roboto , sans-serif;
     bottom: 5px;
+    margin-top: 29px;
 }
 .no-bootstrap > a{
     background-color: #000000;
