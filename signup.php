@@ -18,7 +18,7 @@ if (isset($_SESSION['login_status'])){
 <head>
     <meta charset="utf-8">
     <title>SignUp</title>
-    <link rel="stylesheet" href="style/style.css">
+    <link rel="stylesheet" href="style/signup.css">
     <link rel="stylesheet" href="style/footer.css">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
 </head>
