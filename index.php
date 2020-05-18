@@ -32,7 +32,7 @@ if (isset($_SESSION['login_status'])){
                 </div>
                 <div class="div">
                     <h5>Email</h5>
-                    <input type="email" class="input" required>
+                    <input type="email" name="email" class="input" required>
                 </div>
             </div>
             <div class="input-div pass">
@@ -41,7 +41,7 @@ if (isset($_SESSION['login_status'])){
                 </div>
                 <div class="div">
                     <h5>Password</h5>
-                    <input type="password" class="input" required>
+                    <input type="password" name="password" class="input" required>
                 </div>
             </div>
             <a class="forgotPassword" href="#">Forgot Password?</a>
