@@ -195,7 +195,7 @@ $s = to_javascript_array($test);
                 $(".Main").hide();
                 for(question_count = 0;question_count <=maxQuestion; question_count++){
                     $(".finish").append("<div class='card-body answers'>" +
-                        "<div class='card'> <div class='card-body'><h5 class='text-red'>Q."+(question_count+1) +" " + question[question_count].ques
+                        "<div class='card'><div class='card-body'><h5 class='text-red'>Q."+(question_count+1) +" " + question[question_count].ques
                         +"</h5><br><p class='font-weight-bold'>Correct Answer: "+question[question_count].ac +"</p>" +
                         "<br><p class='font-weight-bold'>Your Answer: "+ question[question_count].userAnswer.toString() +"</p></div></div>")
 
