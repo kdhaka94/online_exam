@@ -80,7 +80,8 @@ $s = to_javascript_array($test);
         </div>
     </div>
 <div class="container Main">
-    <div class="card">
+    <div class="card exam">
+        <div class="loader"></div>
         <div class="card-header text-center bg-dark text-white">
             <!--Question No-->
             <h4 id="question_no"></h4>
@@ -120,16 +121,32 @@ $s = to_javascript_array($test);
     </div>
 
     <script>
-        var question_count = 0;
-        var response = null;
-        var maxQuestion = 1;
-        var question = [];
-        var score = 0;
-        var arr = [1,4,3,2];
+        let question_count = 0;
+        let response = null;
+        // noinspection JSAnnotator
+        const maxQuestion = <?php echo ($maxQuestion-1);?>;
+        let question = [];
+        let score = 0;
+        let arr = [1, 4, 3, 2];
+
+        let mask = $('<div></div>')
+            .css({
+                position: 'absolute',
+                width: '100%',
+                height: '100%',
+                top: 0,
+                left: 0,
+                'z-index': 10000
+            })
+            .appendTo($('.exam'))
+            .click(function(event){
+                event.preventDefault();
+                return false;
+            });
         arr = shuffle(arr);
         //shuffle
         function shuffle(array) {
-            var tmp, current, top = array.length;
+            let tmp, current, top = array.length;
             if(top) while(--top) {
                 current = Math.floor(Math.random() * (top + 1));
                 tmp = array[current];
@@ -141,13 +158,13 @@ $s = to_javascript_array($test);
 
         <?php echo "var questions = $s;\n";?>
         $(document).ready(function () {
-
             $("#score-update").hide();
             $(".Main").hide();
             $("#startExam").click(function () {
                 startExam();
             });
             $('#nextQuestion').click(function () {
+                $(".loader").show();
                 nextQuestion();
             });
 
@@ -242,6 +259,8 @@ $s = to_javascript_array($test);
                         $(".op"+arr[1]).val(question[question_count].a2);
                         $(".op"+arr[2]).val(question[question_count].a3);
                         $(".op"+arr[3]).val(question[question_count].ac);
+                        $(".loader").hide();
+                        mask.remove();
                     }
                 };
                 xmlHttp.open("GET","../processes/getQuestion.php?q="+ questions[question_count]);

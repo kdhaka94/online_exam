@@ -22,3 +22,25 @@
 iframe{
     width: 100%;
 }
+.loader{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    border: 12px solid #f3f3f3;
+    border-radius: 50%;
+    border-top: 10px solid #32be8f;
+    width: 100px;
+    z-index: 1;
+    margin: -60px 0 0 -60px;
+    height: 100px;
+    -webkit-animation: spin 2s linear infinite;
+    animation: spin 2s linear infinite;
+}
+@-webkit-keyframes spin{
+    0% {transform: rotate(0deg)}
+    100% {transform: rotate(360deg)}
+}
+@keyframes spin{
+    0% {transform: rotate(0deg)}
+    100% {transform: rotate(360deg)}
+}
