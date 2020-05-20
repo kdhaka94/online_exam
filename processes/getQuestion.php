@@ -17,6 +17,9 @@ if(isset($_POST['score'])){
     $getScore = $_POST['score'] + $row['marks_obtained'];
     $attempts = 2 + $row['total_attempted'];
     $accuracy = ($getScore/$attempts)*100;
+    $_SESSION['marks_obtained'] = $getScore;
+    $_SESSION['total_attempted'] = $attempts;
+    $_SESSION['accuracy'] = $accuracy;
     $query = "UPDATE students SET total_attempted=$attempts,marks_obtained=$getScore,accuracy=$accuracy WHERE id=$id";
     $result = mysqli_query($conn,$query);
     if($result){
