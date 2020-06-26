@@ -210,11 +210,11 @@ $s = to_javascript_array($test);
             function updateScore() {
                 $.ajax({
                     type:"Post",
-                url:"../processes/getQuestion.php",
-                data:{score : score},
-                success: function (data) {
-                    $("#score-update").html(data).show().delay(3000).fadeOut()
-                }})
+                    url:"../processes/getQuestion.php",
+                    data:{score : score},
+                    success: function (data) {
+                        $("#score-update").html(data).show().delay(3000).fadeOut()
+                    }})
             }
             function nextQuestion() {
                 question[question_count].userAnswer = $('input[name="option"]:checked').val().toString();
