@@ -81,7 +81,9 @@ $s = to_javascript_array($test);
     </div>
 <div class="container Main">
     <div class="card exam">
-        <div class="loader"></div>
+        <div class="mask">
+            <div class="loader"></div>
+        </div>
         <div class="card-header text-center bg-dark text-white">
             <!--Question No-->
             <h4 id="question_no"></h4>
@@ -129,7 +131,7 @@ $s = to_javascript_array($test);
         let score = 0;
         let arr = [1, 4, 3, 2];
 
-        let mask = $('<div></div>')
+        /*let mask = $('<div></div>')
             .css({
                 position: 'absolute',
                 width: '100%',
@@ -142,7 +144,7 @@ $s = to_javascript_array($test);
             .click(function(event){
                 event.preventDefault();
                 return false;
-            });
+            });*/
         arr = shuffle(arr);
         //shuffle
         function shuffle(array) {
@@ -164,7 +166,7 @@ $s = to_javascript_array($test);
                 startExam();
             });
             $('#nextQuestion').click(function () {
-                $(".loader").show();
+                $(".mask").show();
                 nextQuestion();
             });
 
@@ -259,8 +261,7 @@ $s = to_javascript_array($test);
                         $(".op"+arr[1]).val(question[question_count].a2);
                         $(".op"+arr[2]).val(question[question_count].a3);
                         $(".op"+arr[3]).val(question[question_count].ac);
-                        $(".loader").hide();
-                        mask.remove();
+                        $(".mask").hide();
                     }
                 };
                 xmlHttp.open("GET","../processes/getQuestion.php?q="+ questions[question_count]);
