@@ -239,18 +239,15 @@ $s = to_javascript_array($test);
                 if(question_count === maxQuestion){
                     $("#nextQuestion").prop("disabled",true);
                 }
-
-                if(window.XMLHttpRequest){
-                    xmlHttp = new XMLHttpRequest();
-                }
-                else{
-                    xmlHttp = new ActiveXObject("Microsoft.XMLHTTP");
-                }
-                xmlHttp.onreadystatechange = function (ev) {
-                    if(this.readyState == 4 && this.status == 200){
-                        response = this.responseText;
+                $.ajax({
+                    url:"../processes/getQuestion.php",
+                    method:"GET",
+                    tryCount:0,
+                    retryLimit:3,
+                    data:{q: questions[question_count]},
+                    success:function (data) {
                         $("#question_no").text("Question " + (question_count+1));
-                        question[question_count] = JSON.parse(response);
+                        question[question_count] = JSON.parse(data);
                         //Set Question
                         $(".question").text(question[question_count].ques);
                         $("#"+arr[0]).text(question[question_count].a1);
@@ -262,10 +259,39 @@ $s = to_javascript_array($test);
                         $(".op"+arr[2]).val(question[question_count].a3);
                         $(".op"+arr[3]).val(question[question_count].ac);
                         $(".mask").hide();
+                    },
+                    error:function (xhr, textStatus, errorThrown) {
+                        if (textStatus === 'timeout') {
+                            this.tryCount++;
+                            if (this.tryCount <= this.retryLimit) {
+                                //try again
+                                $.ajax(this);
+                                return;
+                            }
+                            return;
+                        }
+                        if (xhr.status === 500) {
+                            //handle error
+                            alert("Error Occurred : Server Not Responding")
+                        } else {
+                            //handle error
+                        }
+                    }
+                })
+
+                /*if(window.XMLHttpRequest){
+                    xmlHttp = new XMLHttpRequest();
+                }
+                else{
+                    xmlHttp = new ActiveXObject("Microsoft.XMLHTTP");
+                }
+                xmlHttp.onreadystatechange = function (ev) {
+                    if(this.readyState == 4 && this.status == 200){
+
                     }
                 };
                 xmlHttp.open("GET","../processes/getQuestion.php?q="+ questions[question_count]);
-                xmlHttp.send();
+                xmlHttp.send();*/
             }
         })
     </script>
